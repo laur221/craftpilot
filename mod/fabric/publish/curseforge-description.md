@@ -51,8 +51,8 @@ Tip: run `/craftpilot setup` in game, or press the **Copy AI setup** button, to 
 - Commands: `/craftpilot config`, `/craftpilot setup`, `/craftpilot status`, `/craftpilot token reset`
 
 ![Settings](images/config.png)
-![Pause menu button](images/pause-menu.png)
-![AI in action](images/in-action.png)
+![Pause menu button](images/pause_menu_button.png)
+![AI in action](images/death_debrief_demo.png)
 
 ## Tools
 
