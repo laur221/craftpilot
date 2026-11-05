@@ -1,0 +1,64 @@
+plugins {
+	id 'java'
+	id 'net.neoforged.moddev' version "${moddev_version}"
+}
+
+version = project.mod_version
+group = project.mod_group
+base {
+	archivesName = project.mod_id
+}
+
+repositories {
+	mavenLocal()
+}
+
+neoForge {
+	version = project.neo_version
+
+	parchment {
+		mappingsVersion = project.parchment_mappings_version
+		minecraftVersion = project.minecraft_version
+	}
+
+	runs {
+		client {
+			client()
+		}
+	}
+
+	mods {
+		"${project.mod_id}" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+processResources {
+	def props = [
+		mod_version: project.mod_version
+	]
+	inputs.properties props
+	filesMatching("META-INF/neoforge.mods.toml") {
+		expand props
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+	options.release = 21
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+	from("LICENSE") {
+		rename { "${it}_$projectName" }
+	}
+}

@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "craftpilot"
+version = "${mod_version}"
+displayName = "CraftPilot"
+logoFile = "icon.png"
+authors = "fr4me"
+description = '''Local loopback HTTP API that lets external tools (e.g. an MCP server) observe and control the Minecraft client.'''
+
+[[mixins]]
+config = "craftpilot.mixins.json"
+
+[[dependencies.craftpilot]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.craftpilot]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "CLIENT"

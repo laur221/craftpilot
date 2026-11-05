@@ -1,0 +1,1 @@
+Let AI assistants like Claude see and control your Minecraft client via MCP: screenshots, GUI, commands, movement.

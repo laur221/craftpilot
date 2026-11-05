@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "craftpilot",
+  "version": "${version}",
+  "name": "CraftPilot",
+  "description": "Local loopback HTTP API that lets external tools (e.g. an MCP server) observe and control the Minecraft client.",
+  "authors": ["fr4me"],
+  "license": "MIT",
+  "icon": "assets/craftpilot/icon.png",
+  "environment": "client",
+  "mixins": ["craftpilot.mixins.json"],
+  "entrypoints": {
+    "client": ["dev.kridder.craftpilot.CraftPilotClient"],
+    "modmenu": ["dev.kridder.craftpilot.ModMenuIntegration"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

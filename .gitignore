@@ -1,0 +1,8 @@
+node_modules/
+build/
+run/
+.gradle/
+.idea/
+*.log
+out/
+bin/
